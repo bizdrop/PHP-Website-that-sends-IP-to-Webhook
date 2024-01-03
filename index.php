@@ -2,7 +2,7 @@
 
 function sendToDiscord($msg)
 {
-    $url = 'https://discordapp.com/api/webhooks/1130920139328585808/KNwIsl6C9LL-442Bpmh52AR7FZmtazc5znmGrfveoxWbCRYhJQu9sMHhO5FKX_bo1k7Z';
+    $url = 'WEBHOOK HERE';
     $headers = [
         'Content-Type: application/json',
     ];
