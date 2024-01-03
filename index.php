@@ -54,7 +54,6 @@ if (!isset($_SESSION[$spamKey])) {
     }
 }
 
-// ProxyCheck.io API without API key
 $apiEndpoint = 'https://proxycheck.io/v2/' . $_SERVER['REMOTE_ADDR'] . '?vpn=1&asn=1';
 $apiResponse = file_get_contents($apiEndpoint);
 
@@ -67,11 +66,6 @@ if ($apiResponse !== false) {
         // Check for VPN
         if (isset($ipInfo['proxy']) && $ipInfo['proxy'] == 'yes') {
             die('VPN detected. Access denied.');
-        }
-
-        // Check for ASN (you can adjust this condition based on your requirements)
-        if (isset($ipInfo['asn']) && $ipInfo['asn'] != 'AS12345') {
-            die('Access denied due to ASN restriction.');
         }
     }
 }
